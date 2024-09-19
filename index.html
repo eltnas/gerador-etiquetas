@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Etiquetas</title>
+    
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Gerador de Etiquetas</h1>
+    <div class="box">
+        <div class="box-dados">
+            <h3>Destinatário</h3>
+            <label for="Dest-nome">Nome do Destinatário:</label>
+            <input type="text" id="Dest-nome" placeholder="Digite o nome">
+        
+            <label for="Dest-endereco">Endereço:</label>
+            <textarea id="Dest-endereco" rows="3" placeholder="Digite o endereço"></textarea>
+            
+            <label for="Dest-num">Número:</label>
+            <input type="text" id="Dest-num" placeholder="Digite o número">
+        
+            <label for="Dest-cidade">Cidade:</label>
+            <input type="text" id="Dest-cidade" placeholder="Digite a cidade">
+        
+            <label for="Dest-uf">Estado:</label>
+            <select id="Dest-uf">
+                <option value="">Selecione o Estado</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+        
+            <label for="Dest-cep">CEP:</label>
+            <input type="text" id="Dest-cep" placeholder="Digite o CEP">
+        
+            <label for="Dest-telefone">Telefone:</label>
+            <input type="text" id="Dest-telefone" placeholder="Digite o telefone">
+        </div>
+
+        <div class="box-dados">
+            <h3>Remetente</h3>
+            <label for="Rem-nome">Nome do Remetente:</label>
+            <input type="text" id="Rem-nome" placeholder="Digite o nome">
+        
+            <label for="Rem-endereco">Endereço:</label>
+            <textarea id="Rem-endereco" rows="3" placeholder="Digite o endereço"></textarea>
+            
+            <label for="Rem-num">Número:</label>
+            <input type="text" id="Rem-num" placeholder="Digite o número">
+        
+            <label for="Rem-cidade">Cidade:</label>
+            <input type="text" id="Rem-cidade" placeholder="Digite a cidade">
+        
+            <label for="Rem-uf">Estado:</label>
+            <select id="Rem-uf">
+                <option value="">Selecione o Estado</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+        
+            <label for="Rem-cep">CEP:</label>
+            <input type="text" id="Rem-cep" placeholder="Digite o CEP">
+        
+            <label for="Rem-telefone">Telefone:</label>
+            <input type="text" id="Rem-telefone" placeholder="Digite o telefone">
+
+        </div>
+        
+    </div>
+    <button onclick="gerarEtiqueta()">Gerar Etiqueta</button>
+</div>
+
+<div class="preview" id="previewSection">
+    <h3>Pré-visualização da Etiqueta</h3>
+    <div class="etiqueta" id="etiqueta">
+        <hr />
+        <h3>Destinatário</h3>
+        <p><strong>Nome:</strong> <span id="DestNomeEtiqueta"></span></p>
+        <p><strong>Endereço:</strong> <span id="DestEnderecoEtiqueta"></span></p>
+        <p><strong>Cidade:</strong> <span id="DestCidadeEtiqueta"></span></p>
+        <p><strong>CEP:</strong> <span id="DestCepEtiqueta"></span></p>
+        <p><strong>Telefone:</strong> <span id="DestTelefoneEtiqueta"></span></p>
+
+        <hr />
+        <h3>Remetente</h3>
+        <p><strong>Nome:</strong> <span id="RemNomeEtiqueta"></span></p>
+        <p><strong>Endereço:</strong> <span id="RemEnderecoEtiqueta"></span></p>
+        <p><strong>Cidade:</strong> <span id="RemCidadeEtiqueta"></span></p>
+        <p><strong>CEP:</strong> <span id="RemCepEtiqueta"></span></p>
+        <p><strong>Telefone:</strong> <span id="RemTelefoneEtiqueta"></span></p>
+        <hr />
+    </div>
+    <button onclick="imprimir()">Imprimir</button>
+    <button onclick="fecharPreview()">Fechar</button>
+</div>
+
+<script src="./assets/js/script.js">
+    
+</script>
+
+</body>
+</html>
